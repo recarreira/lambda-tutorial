@@ -241,6 +241,11 @@ public class Exercise_2_Test {
      * Ensure that the Set returned cannot be modified by callers by wrapping the result
      * in Collections.unmodifiableSet().
      * </p>
+     * <p>
+     * Hint: Try to solve it with and without method reference and check out
+     * {@link Collectors#collectingAndThen(Collector, Function)}.
+     * </p>
+     *
      * @throws ClassNotFoundException If the lambdas binary build no longer contains the class
      * @see Stream#collect(java.util.stream.Collector)
      * @see Collectors#collectingAndThen(Collector, Function)
