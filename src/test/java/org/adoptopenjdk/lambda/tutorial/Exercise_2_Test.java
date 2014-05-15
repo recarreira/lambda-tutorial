@@ -64,9 +64,7 @@ import static org.hamcrest.Matchers.not;
  * </p>
  * <p>
  * Consider how often you have written code like this:
- * TODO Bug in the Javdoc processor? It claims the code annotation construct is invalid
- * <pre> 
- * {@code
+  * <pre>{@code
  *     List<String> things = new ArrayList<>();
  *     for (String s: otherThings) {
  *         if (satisfiesSomeCondition(s)) {
