@@ -242,8 +242,8 @@ public class Exercise_2_Test {
      * in Collections.unmodifiableSet().
      * </p>
      * <p>
-     * Hint: Try to solve it with and without method reference and check out
-     * {@link Collectors#collectingAndThen(Collector, Function)}.
+     * Hint: Check out {@link Collectors#collectingAndThen(Collector, Function)}. And if you already know about method
+     * references, you may use that. However, we will come to them again in Exercise 4.
      * </p>
      *
      * @throws ClassNotFoundException If the lambdas binary build no longer contains the class
