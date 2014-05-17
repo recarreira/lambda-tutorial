@@ -216,7 +216,7 @@ public class Exercise_4_Test {
      *
      */
     @Test
-    public void printContentsOfDocumentUsingReferenceOfInstanceMethodBeloningToAnObject() {
+    public void printContentsOfDocumentUsingReferenceOfInstanceMethodBelongingToAnObject() {
         Document diary = new Document("My Diary", Arrays.asList(
                 new Page("Today I went shopping"),
                 new Page("Today I did maths"),
@@ -245,7 +245,7 @@ public class Exercise_4_Test {
      * instance.
      */
     @Test
-    public void transformPagesToHaveFooterUsingReferenceOfInstanceMethodBelonginToThisObject() {
+    public void transformPagesToHaveFooterUsingReferenceOfInstanceMethodBelongingToThisObject() {
         Document diary = new Document("My Diary", Arrays.asList(
                 new Page("Today I went shopping"),
                 new Page("Today I did maths"),
