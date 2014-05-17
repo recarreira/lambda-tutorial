@@ -160,7 +160,7 @@ public class Exercise_4_Test {
      * their titles. The implementation has already been filled out, but it uses a lambda, as in:
      * <code>.map(document -> document.getTitle())</code>
      * <br>
-     * Instead of using a lambda, use a method reference instead.
+     * Instead of using a lambda, use a method reference.
      *
      * @see Documents#titlesOf(Document...)
      * @see Document#getTitle()
@@ -186,7 +186,7 @@ public class Exercise_4_Test {
      * Document. The method <code>characterCount</code> can be applied to each Page to calculate the number of
      * characters in that page. Currently it is invoked using a lambda.
      * <br>
-     * Change to use a method reference which uses the static <code>characterCount</code> method.
+     * Change to use a method reference which uses the <code>characterCount</code> method.
      *
      * @see Documents#pageCharacterCounts(Document)
      * @see Documents#characterCount(Page) 
@@ -204,11 +204,9 @@ public class Exercise_4_Test {
 
     /**
      * The <code>Documents</code> class has a method which takes a <code>PagePrinter</code> and renders a
-     * <code>Document</code> to text. The method uses two lambda expressions where method references can be used. In
-     * this case the method references are to methods belonging to a particular instance object.
+     * <code>Document</code> to text. The method uses two lambda expressions where method references can be used.
      * <br>
-     * Change {@link Documents#print(Document, PagePrinter)} to use method references to invoke instance methods of
-     * particular objects.
+     * Change {@link Documents#print(Document, PagePrinter)} to use method references.
      *
      * @see Documents#print(Document, PagePrinter)
      * @see StringBuilder#append
@@ -238,11 +236,9 @@ public class Exercise_4_Test {
     /**
      * The <code>Document</code> class has a method which can create a new Document where all the pages have had a
      * footer appended to it of the format "Document: {title}". The method uses two lambda expressions where method
-     * references can be used. In this case the method references are to methods belonging to <code>this</code> object
-     * instance. That is, the methods to be invoked should be invoked on <code>this</code>.
+     * references can be used.
      * <br>
-     * Change {@link Document#copyWithFooter()} to use method references to invoke instance methods on <code>this</code>
-     * instance.
+     * Change {@link Document#copyWithFooter()} to use method references.
      */
     @Test
     public void transformPagesToHaveFooterUsingReferenceOfInstanceMethodBelongingToThisObject() {
@@ -282,6 +278,8 @@ public class Exercise_4_Test {
                 contains(pageContaining("gnippohs tnew I yadoT"),
                         pageContaining("shtam did I yadoT"),
                         pageContaining("yraid ym ni etorw I yadoT")));
+        assertThat(Documents.class, usesMethodReferences("getContent"));
+        assertThat(Documents.class, usesMethodReferences("translate"));
         assertThat(Documents.class, usesMethodReferences("new"));
     }
 
