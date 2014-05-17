@@ -47,10 +47,6 @@ public final class Document {
         return this.title;
     }
 
-    private Document copyWithPages(List<Page> newPages) {
-        return new Document(title, newPages);
-    }
-
     public Document copyWithFooter() {
         return getPages().stream()
             .map(page -> appendFooter(page))
@@ -60,6 +56,10 @@ public final class Document {
     private Page appendFooter(Page original) {
         String footer = "Document: " + getTitle();
         return new Page(format("%s%n%s", original.getContent(), footer));
+    }
+
+    private Document copyWithPages(List<Page> newPages) {
+        return new Document(title, newPages);
     }
 
     public static final class Page {
