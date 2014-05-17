@@ -63,8 +63,8 @@ public class Documents {
     }
 
     /**
-     * Hint: To better understand the code below, sort out (write down as comment) which type results each map
-     * operation.
+     * Hint: To better understand the code below, sort out (write down as comment) which type each map
+     * operation returns.
      */
     public static Document translate(Document document, Translator translator) {
         return document.getPages().stream()
