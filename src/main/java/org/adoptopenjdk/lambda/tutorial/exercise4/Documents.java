@@ -62,6 +62,10 @@ public class Documents {
         return output.toString();
     }
 
+    /**
+     * Hint: To better understand the code below, sort out (write down as comment) which type results each map
+     * operation.
+     */
     public static Document translate(Document document, Translator translator) {
         return document.getPages().stream()
                 .map(page -> page.getContent())
