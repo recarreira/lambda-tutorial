@@ -22,9 +22,13 @@ package org.adoptopenjdk.lambda.tutorial.exercise2;
  * #L%
  */
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Some (inaccurate) London electrical districts
@@ -54,9 +58,19 @@ public enum ElectoralDistrict {
      * @return filtered set of registered voters in a district
      */
     public static Set<RegisteredVoter> votersIn(ElectoralDistrict district, Collection<RegisteredVoter> voters) {
-        // [your code here]
 
-        return Collections.emptySet();
+//        Set<RegisteredVoter> districtVoters = new HashSet<>();
+//        for (RegisteredVoter registeredVoter: voters) {
+//            if(registeredVoter.getElectorId().startsWith(district.getPrefix())){
+//                districtVoters.add(registeredVoter);
+//            }
+//        }
+
+         Set<RegisteredVoter> registeredVoters = voters.stream()
+                .filter(registeredVoter -> registeredVoter.getElectorId().startsWith(district.getPrefix()))
+                .collect(Collectors.toSet());
+
+        return Collections.unmodifiableSet(registeredVoters);
     }
 
     /**
@@ -67,8 +81,17 @@ public enum ElectoralDistrict {
      */
     public static Set<Ballot> unspoiledBallots(Set<Ballot> ballots) {
         // [your code here]
+//        Set<Ballot> unspoiledBallots = new java.util.HashSet<>();
+//        for (Ballot ballot: ballots) {
+//            if (!ballot.isSpoiled()){
+//                unspoiledBallots.add(ballot);
+//            }
+//        }
+//
+//        return unspoiledBallots;
+        // quero toda a lista de votos - os cagados
 
-        return Collections.emptySet();
+        return ballots.stream().filter(ballot -> !ballot.isSpoiled()).collect(java.util.stream.Collectors.toSet());
     }
 
     public String getPrefix() {

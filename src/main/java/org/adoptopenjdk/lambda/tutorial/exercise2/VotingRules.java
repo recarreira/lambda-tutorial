@@ -22,10 +22,9 @@ package org.adoptopenjdk.lambda.tutorial.exercise2;
  * #L%
  */
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -41,8 +40,15 @@ public class VotingRules {
      * @return a list of eligible voters
      */
     public static List<Person> eligibleVoters(List<Person> potentialVoters, int legalAgeOfVoting) {
-        // [your code here]
+//        for(Person person: potentialVoters) {
+//            if(person.getAge() >= legalAgeOfVoting) {
+//                elegibleVoters.add(person);
+//            }
+//        }
 
-        return Collections.emptyList();
+        return potentialVoters
+                .stream()
+                .filter(person -> person.getAge() >= legalAgeOfVoting)
+                .collect(Collectors.toList());
     }
 }
